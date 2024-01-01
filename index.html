@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PM - Pick a Movie!</title>
-    <script  src="./api/get.js"></script>
+    <link rel="stylesheet" href="./src/common/styles/reset.css">
+    <link rel="stylesheet" href="./src/common/styles/main.css">
+    <script type="module" src="./src/common/main.js"></script>
 </head>
 <body>
-    <header>
-        <img src="" alt="" class="logo">
-        <form action="" class="searchBar">
+    <header class="headerLayout">
+        <div class="logoBox">
+            <img src="" alt="" class="logo">
+        </div>
+        <form action="submit" class="searchBar">
             <input type="text" class="searchInput">
             <button class="searchButton">검색</button>
         </form>
@@ -20,18 +24,7 @@
             <h1>
                 인기 영화
             </h1>
-            <ul>
-                <li class="movieCard">
-                    <img
-                        src="https://image.tmdb.org/t/p/w300/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
-                        alt="moviePoster"
-                        class="poster">
-                    <h2 class="title">영화 제목</h2>
-                    <span class="vote_average">
-                        Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge."
-                    </span>
-                    <p class="overview"></p>
-                </li>
+            <ul class="movieList">
             </ul>
         </section>
     </main>
