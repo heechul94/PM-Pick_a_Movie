@@ -5,6 +5,7 @@ import clickEvent from "./clickId.js";
 const data = await getMovieList();
 let dataArr = [];
 dataArr = data.results;
+
 dataArr.forEach( e =>{
     const card = newCard();
     const list = document.querySelector('.movieList');
