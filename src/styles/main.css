@@ -67,6 +67,7 @@
 }
 .poster{
     width: 65%;
+    height: 31rem;
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0.2rem 0.2rem 1rem #00000080;
@@ -78,6 +79,7 @@
 .overview {
     display: -webkit-box;
     width: 90%;
+    height: calc(1rem * 3);
     word-wrap: break-word;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
