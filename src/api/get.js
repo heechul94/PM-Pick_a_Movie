@@ -18,17 +18,3 @@ export async function getMovieList () {
         alert(error);
     }
 };
-
-// export async function searchMovie (word) {
-//     if( typeof word !== 'string'&& !word.length ) return;
-//     try{
-//         const result = await fetch(
-//             `https://api.themoviedb.org/3/search/movie?query=${word}&include_adult=false&language=en-US&page=1`,
-//             options
-//         );
-//         const data = await result.json();
-//         return data;
-//     }catch (error) {
-//         alert(error);
-//     }
-// }
