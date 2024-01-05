@@ -1,13 +1,16 @@
 /* ======== header =========== */
+body{
+    background-color: #640ff310;
+}
 .headerLayout {
     display: flex;
     justify-content: space-between;
     position: sticky;
-    top: 1rem;
+    top: 0rem;
     width: calc(100vw-1);
-    margin: 5rem;
+    /* margin: 5rem; */
     padding: 1rem 3rem;
-    /* background-color: #644ff825; */
+    background-color: white;
     border-radius: 0.5rem;
 }
 .pageTitle {
@@ -71,6 +74,7 @@
     align-items: center;
     width: 100%;
     margin: 5rem auto;
+
 }
 .topRated > h1 {
     font-size: 3rem;
@@ -94,6 +98,7 @@
     width: 80%;
     padding: 1rem;
     /* border: 1px solid blueviolet; */
+    background-color: #00000010;
     border-radius: 0.5rem;
     box-shadow: inset 0rem 0rem 0.1rem #640ff380;
 }
@@ -101,7 +106,7 @@
     box-shadow: -0.1rem 0rem 0.5rem #640ff380;
 }
 .movieCard
->img:first-child{
+>img{
     align-self: center;
 }
 .movieCard
@@ -117,7 +122,7 @@
 }
 .vote_average {
     margin-bottom: 1rem;
-    color: red;
+    color: blueviolet;
 }
 .overview {
     display: -webkit-box;
