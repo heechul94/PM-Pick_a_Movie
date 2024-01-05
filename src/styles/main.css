@@ -13,8 +13,11 @@ body{
     background-color: white;
     border-radius: 0.5rem;
 }
-.pageTitle {
+.homeTitle{
     width: 50%;
+}
+.pageTitle {
+    width: 100%;
     align-self: center;
     font-size: 2rem;
     color: #640ff380;
