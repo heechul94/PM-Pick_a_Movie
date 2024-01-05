@@ -12,10 +12,18 @@ export async function clickSubmitButton (target,data){
         const $searchInput = document.querySelector('.searchInput');
         const list = document.querySelector('.movieList');
         let searchWord = $searchInput.value;
-        if(!searchWord) return alert('검색어를 입력해주세요')
+        if(!searchWord) {
+            $searchInput.value = null;
+            $searchInput.focus()
+            return alert('검색어를 입력해주세요');
+        }
         else{
             const searchData = await data.filter(e=>e.title.toLowerCase().includes(searchWord.toLowerCase()))
-            if(!searchData.length) return alert('해당하는 영화가 없습니다.');
+            if(!searchData.length){
+                $searchInput.value = null;
+                $searchInput.focus()
+                return alert('해당하는 영화가 없습니다.');
+            }
             console.log(searchData)
             list.replaceChildren();
 
@@ -33,6 +41,8 @@ export async function clickSubmitButton (target,data){
                 list.appendChild(card);
                 return card;
             });
+            $searchInput.value = null;
+            $searchInput.focus()
         };
     });
 };
