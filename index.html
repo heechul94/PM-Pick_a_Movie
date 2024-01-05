@@ -7,26 +7,27 @@
     <title>PM - Pick a Movie!</title>
     <link rel="stylesheet" href="./src/styles/reset.css">
     <link rel="stylesheet" href="./src/styles/main.css">
-    <script type="module" src="./src/common/main.js"></script>
 </head>
 <body>
     <header class="headerLayout">
         <div class="logoBox">
-            <img src="" alt="" class="logo">
+            <img src="/public/PM_LOGO.png" alt="" class="logo">
         </div>
+        <h1 class="pageTitle">PICK A MOVIE</h1>
         <form id='searchBar' action="submit" class="searchBar">
             <input id="searchInput" type="text" class="searchInput">
-            <button id="searchButton" class="searchButton">검색</button>
+            <button id="searchButton" class="searchButton">SEARCH</button>
         </form>
     </header>
     <main>
         <section class="topRated">
             <h1>
-                인기 영화
+                높은 평점의 영화
             </h1>
             <ul class="movieList">
             </ul>
         </section>
     </main>
+    <script type="module" src="./src/common/main.js"></script>
 </body>
 </html>
