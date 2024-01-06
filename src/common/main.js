@@ -1,6 +1,6 @@
 import {getMovieList} from "../api/get.js";
-import newCard from "/card.js";
-import {clickId, clickSubmitButton,} from "/click.js";
+import newCard from "./card.js";
+import {clickId, clickSubmitButton,} from "./click.js";
 
 const $searchButton = document.querySelector('.searchButton');
 document.addEventListener("DOMContentLoaded",async ()=>{
