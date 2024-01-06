@@ -9,7 +9,7 @@ const options = {
 export async function getMovieList () {
     try {
         const result = await fetch(
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=bce050d9c27c107fa125fce8ea0cfbb6&language=en-US&page=1",
+            "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
             options
         );
         const data = await result.json();
