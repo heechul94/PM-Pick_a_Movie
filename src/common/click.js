@@ -1,4 +1,4 @@
-// import newCard from "./card.js";
+import { showCards } from "./card.js";
 
 export function clickId (target) {
     target.addEventListener('click', (event)=>
@@ -14,7 +14,7 @@ export async function clickSubmitButton (target,data){
         let searchWord = $searchInput.value;
         if(!searchWord) {
             $searchInput.value = null;
-            $searchInput.focus()
+            $searchInput.focus();
             return alert('검색어를 입력해주세요');
         }
         else{
@@ -23,26 +23,16 @@ export async function clickSubmitButton (target,data){
                 $searchInput.value = null;
                 $searchInput.focus()
                 return alert('해당하는 영화가 없습니다.');
-            }
-            console.log(searchData)
+            };
+
             list.replaceChildren();
 
-            searchData.forEach(e=>{
-                const card = newCard();
-                const list = document.querySelector('.movieList');
-                card.id = e.id;
-                e.poster_path
-                ? card.querySelector('.poster').src = `https://image.tmdb.org/t/p/original/${e.poster_path}`
-                : card.querySelector('.poster').src = `../../images/noImage.jpg`
-                card.querySelector('.title').innerText = e.title;
-                card.querySelector('.vote_average').innerText = `평점 : ${e.vote_average}`;
-                card.querySelector('.overview').innerText = e.overview;
-                clickId(card);
-                list.appendChild(card);
-                return card;
-            });
+            showCards(searchData);
+
             $searchInput.value = null;
-            $searchInput.focus()
+            $searchInput.focus();
+
+
         };
     });
 };
