@@ -1,4 +1,6 @@
-export default function newCard (){
+import { clickId } from "./click.js";
+
+export function newCard (){
 
     const $newCard = document.createElement("li");
     const $newPoster = document.createElement("img");
@@ -14,4 +16,21 @@ export default function newCard (){
     $newCard.append($newPoster, $newTitle, $newRate, $newContent);
 
     return $newCard;
+}
+
+export function showCards (data){
+    data.forEach( e => {
+        const card = newCard();
+        const list = document.querySelector('.movieList');
+        card.id = e.id;
+        e.poster_path
+        ? card.querySelector('.poster').src = `https://image.tmdb.org/t/p/original/${e.poster_path}`
+        : card.querySelector('.poster').src = `../../images/noImage.jpg`
+        card.querySelector('.title').innerText = e.title;
+        card.querySelector('.vote_average').innerText = `평점 : ${e.vote_average}`;
+        card.querySelector('.overview').innerText = e.overview;
+        clickId(card);
+        list.appendChild(card);
+        return card;
+    });
 }
