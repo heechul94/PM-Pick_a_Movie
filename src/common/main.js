@@ -9,6 +9,3 @@ document.addEventListener("DOMContentLoaded",async ()=>{
     showCards(dataArr);
     clickSubmitButton($searchButton,dataArr);
 })
-
-
-
