@@ -1,4 +1,4 @@
-import newCard from "./card.js";
+// import newCard from "./card.js";
 
 export function clickId (target) {
     target.addEventListener('click', (event)=>
