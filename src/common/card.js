@@ -24,7 +24,7 @@ export function showCards (data){
         const list = document.querySelector('.movieList');
         card.id = e.id;
         e.poster_path
-        ? card.querySelector('.poster').src = `https://image.tmdb.org/t/p/original/${e.poster_path}`
+        ? card.querySelector('.poster').src = `https://image.tmdb.org/t/p/w500/${e.poster_path}`
         : card.querySelector('.poster').src = `../../images/noImage.jpg`
         card.querySelector('.title').innerText = e.title;
         card.querySelector('.vote_average').innerText = `평점 : ${e.vote_average}`;
