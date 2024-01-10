@@ -51,10 +51,14 @@
 .movie-content-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
+  grid-gap: 3rem;
   grid-template-areas:
     "a a "
     "b b"
     "c c";
   font-size: 2rem;
+  padding: 5rem;
+}
+.review-wrap {
+  padding: 1rem 5rem;
 }
