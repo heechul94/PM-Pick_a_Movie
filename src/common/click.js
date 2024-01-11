@@ -1,7 +1,11 @@
 import { showCards } from "./card.js";
 
 export function clickId(target) {
-  target.addEventListener("click", (event) => alert(`이 영화의 ID는 ${event.currentTarget.id} 입니다`));
+  // target.addEventListener("click", (event) => alert(`이 영화의 ID는 ${event.currentTarget.id} 입니다`));
+  // const aTag = document.querySelector('a');
+  target.addEventListener("click", (event) => {
+    location.href = `detail.html?${event.currentTarget.id}`});
+    console.log(location.href);
 }
 
 export async function clickSubmitButton(target, data) {
