@@ -16,3 +16,11 @@ export async function getMovieList() {
     alert(error);
   }
 }
+
+const receivedData = location.href.split('?')[1];
+
+
+fetch(`https://api.themoviedb.org/3/movie/${receivedData}?language=ko`, options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
