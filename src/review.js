@@ -6,7 +6,7 @@ function submitReview() {
 
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-  if (!reviewer || !reviewText) {
+  if (reviewer.length <= 0 || reviewText.length <= 0) {
     alert("작성자와 리뷰를 모두 입력하세요!");
     return;
   }
