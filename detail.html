@@ -16,23 +16,23 @@
       </a>
     </nav>
     <main class="main-detail">
-      <section class="movie-title-wrap">
+      <section class="movie-image-wrap">
         <img class="backdrop-image" src="" alt="" />
-        <h1 class="movie-title"></h1>
       </section>
       <section class="movie-content-wrap">
-        <h2 class="overview"></h2>
-
-        <h2 class="release"></h2>
-
-        <h2 class="genres"></h2>
-
-        <h2 class="countries"></h2>
-
-        <h2 class="runtime"></h2>
-
-        <h2 class="companies"></h2>
-
+        <div class="movie-info-wrap">
+          <div class="movie-title-wrap">
+            <h1 class="movie-title"></h1>
+            <h2 class="movie-original-title"></h2>
+          </div>
+          <div class="sub-info-wrap">
+            <span class="release"></span>
+            <span class="genres"></span>
+            <span class="countries"></span>
+            <span class="runtime"></span>
+          </div>
+        </div>
+        <p class="overview"></p>
       </section>
       <section class="review-wrap">
         <h2>Reviews</h2>
@@ -44,12 +44,11 @@
         <button onclick="removeReview()">전부 삭제</button>
         <label for="revivewPassword">비밀번호:</label>
         <input id="revivewPassword" class="revivewPassword" name="revivewPassword" />
-        <h3>리뷰:</h3>
         <div class="reviewList"></div>
       </body>
       <script src="src/review.js"></script>
       </section>
     </main>
-    <script type="module" src="./src/common/detail.js"></script>
+    <script type="module" src="./src/detail.js"></script>
   </body>
 </html>
