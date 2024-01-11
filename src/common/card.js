@@ -1,12 +1,11 @@
 import { clickId } from "./click.js";
 
-export function newCard() {
+function newCard() {
   const $newCard = document.createElement("li");
   const $newPoster = document.createElement("img");
   const $newTitle = document.createElement("h2");
   const $newRate = document.createElement("span");
   const $newContent = document.createElement("p");
-
   $newCard.classList.add("movieCard");
   $newPoster.classList.add("poster");
   $newTitle.classList.add("title");
@@ -17,10 +16,11 @@ export function newCard() {
   return $newCard;
 }
 
+const list = document.querySelector(".movieList");
+
 export function showCards(data) {
-  data.forEach((e) => {
+  const cards = data.map((e) => {
     const card = newCard();
-    const list = document.querySelector(".movieList");
     card.id = e.id;
     e.poster_path
       ? (card.querySelector(".poster").src = `https://image.tmdb.org/t/p/w500/${e.poster_path}`)
@@ -29,7 +29,9 @@ export function showCards(data) {
     card.querySelector(".vote_average").innerText = `평점 : ${e.vote_average}`;
     card.querySelector(".overview").innerText = e.overview;
     clickId(card);
-    list.appendChild(card);
     return card;
+  });
+  cards.forEach((card) => {
+    list.appendChild(card);
   });
 }
