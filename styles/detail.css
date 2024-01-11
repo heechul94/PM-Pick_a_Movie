@@ -65,7 +65,7 @@ body {
 }
 .movie-title-wrap {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 25px;
 }
 .movie-title {
   font-size: 2rem;
