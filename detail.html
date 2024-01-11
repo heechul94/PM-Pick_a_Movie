@@ -17,7 +17,7 @@
     </nav>
     <main class="main-detail">
       <section class="movie-title-wrap">
-        <img class="backdrop-image" src="https://image.tmdb.org/t/p/original/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg" alt="" />
+        <img class="backdrop-image" src="" alt="" />
         <h1 class="movie-title"></h1>
       </section>
       <section class="movie-content-wrap">
@@ -36,6 +36,18 @@
       </section>
       <section class="review-wrap">
         <h2>Reviews</h2>
+        <label for="reviewer">작성자:</label>
+        <input type="text" id="reviewer" class="reviewer" name="reviewer" />
+        <label for="revivewText">작성:</label>
+        <textarea id="reviewText" class="reviewText" name="reviewText"></textarea>
+        <button onclick="submitReview()">영화 리뷰 작성</button>
+        <button onclick="removeReview()">전부 삭제</button>
+        <label for="revivewPassword">비밀번호:</label>
+        <input id="revivewPassword" class="revivewPassword" name="revivewPassword" />
+        <h3>리뷰:</h3>
+        <div class="reviewList"></div>
+      </body>
+      <script src="src/review.js"></script>
       </section>
     </main>
     <script type="module" src="./src/common/detail.js"></script>
