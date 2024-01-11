@@ -2,28 +2,21 @@
 <html>
   <head>
     <title>영화 리뷰 게시판</title>
-    <script>
-      function submitReview() {
-        let title = document.querySelector(".reviewTitle").value;
-        let review = document.querySelector(".reviewText").value;
-        let reviewList = document.querySelector(".reviewList");
-
-        reviewList.innerHTML += "<b>" + title + "</b><p>" + review + "</p>" + "<hr>";
-      }
-    </script>
   </head>
   <body>
     <h3>영화 리뷰 게시판</h3>
 
-    <label for="reviewTitle">영화 제목:</label>
-    <input type="text" id="reviewTitle" class="reviewTitle" name="reviewTitle" /><br /><br />
+    <label for="reviewer">작성자:</label>
+    <input type="text" id="reviewer" class="reviewer" name="reviewer" /><br /><br />
 
-    <label for="reviewText">리뷰:</label>
+    <label for="revivewText">작성:</label>
     <textarea id="reviewText" class="reviewText" name="reviewText"></textarea><br /><br />
 
-    <button onclick="submitReview()">영화 리뷰 제출</button>
+    <button onclick="submitReview()">영화 리뷰 작성</button>
+    <button onclick="removeReview()">전부 삭제</button>
 
     <h3>리뷰:</h3>
     <div class="reviewList"></div>
   </body>
+  <script src="src/review.js"></script>
 </html>
