@@ -1,7 +1,7 @@
 function submitReview() {
-  let reviewer = document.querySelector(".reviewer").value;
-  let reviewText = document.querySelector(".review-Text").value;
-  let revivewPassword = document.querySelector(".revivew-Password").value;
+  let reviewer = document.querySelector(".reviewer-input").value;
+  let reviewText = document.querySelector(".review-text").value;
+  let reviewPassword = document.querySelector(".review-password").value;
   let newReview = { reviewer: reviewer, text: reviewText };
 
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
@@ -12,11 +12,11 @@ function submitReview() {
   } else {
     reviews.push(newReview);
     localStorage.setItem("reviews", JSON.stringify(reviews));
-    localStorage.setItem("revivew-Password", JSON.stringify(revivewPassword));
+    localStorage.setItem("review-password", JSON.stringify(reviewPassword));
 
-    document.querySelector(".reviewer").value = "";
-    document.querySelector(".review-Text").value = "";
-    document.querySelector(".revivew-Password").value = "";
+    document.querySelector(".reviewer-input").value = "";
+    document.querySelector(".review-text").value = "";
+    document.querySelector(".review-password").value = "";
   }
 
   displayReviews();
@@ -24,22 +24,22 @@ function submitReview() {
 
 function removeReview() {
   localStorage.removeItem("reviews");
-  localStorage.removeItem("revivew-Password");
+  localStorage.removeItem("review-password");
 
   displayReviews();
 }
 
 function displayReviews() {
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-  let reviewList = document.querySelector(".review-List");
+  let reviewList = document.querySelector(".review-list");
 
   reviewList.innerHTML = "";
 
   if (reviews.length > 0) {
     reviews.forEach(function (review) {
-      let reviewWriter = `<div class ="review-Writer">${review.reviewer}</div>`;
-      let reviewContent = `<div class ="review-Content">${review.text}</div>`;
-      let reviewFull = `<div class="review-Full">${reviewWriter + reviewContent}</div>`;
+      let reviewWriter = `<div class ="review-writer">${review.reviewer}</div>`;
+      let reviewContent = `<div class ="review-content">${review.text}</div>`;
+      let reviewFull = `<div class="review-full">${reviewWriter + reviewContent}</div>`;
       reviewList.innerHTML += reviewFull;
     });
   }
