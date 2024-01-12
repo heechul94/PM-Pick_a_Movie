@@ -38,10 +38,10 @@ function displayReviews() {
 
   if (reviews.length > 0) {
     reviews.forEach(function (review) {
-      let reviewWriter = `<div class ="review-writer">${review.reviewer}</div>`;
+      let reviewWriter = `<span class ="review-user">${review.reviewer}</span>`;
       let reviewContent = `<div class ="review-content">${review.text}</div>`;
-      let reviewFull = `<div class="review-full">${reviewWriter + reviewContent}</div>`;
-      reviewList.innerHTML += reviewFull;
+      let reviewCard = `<div class="review-card">${reviewWriter + reviewContent}</div>`;
+      reviewList.innerHTML += reviewCard;
     });
   }
 }
