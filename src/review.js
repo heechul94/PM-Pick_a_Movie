@@ -1,22 +1,26 @@
+const reviewer = document.querySelector(".reviewer-input");
+const reviewText = document.querySelector(".review-text");
+const reviewPassword = document.querySelector(".review-password");
+const reviewList = document.querySelector(".review-list");
+
 function submitReview() {
-  let reviewer = document.querySelector(".reviewer-input").value;
-  let reviewText = document.querySelector(".review-text").value;
-  let reviewPassword = document.querySelector(".review-password").value;
-  let newReview = { reviewer: reviewer, text: reviewText };
+  let newReview = { reviewer: reviewer.value, text: reviewText.value, password: reviewPassword.value };
 
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-  if (!reviewer.trim() || !reviewText.trim()) {
+  if (!reviewer.value.trim() || !reviewText.value.trim()) {
     alert("작성자와 리뷰를 모두 입력하세요!");
     return;
   } else {
     reviews.push(newReview);
     localStorage.setItem("reviews", JSON.stringify(reviews));
-    localStorage.setItem("review-password", JSON.stringify(reviewPassword));
+    reviewer.value = null;
+    reviewText.value = null;
+    reviewPassword.value = null;
 
-    document.querySelector(".reviewer-input").value = "";
-    document.querySelector(".review-text").value = "";
-    document.querySelector(".review-password").value = "";
+    // document.querySelector(".reviewer-input").value = "";
+    // document.querySelector(".review-text").value = "";
+    // document.querySelector(".review-password").value = "";
   }
 
   displayReviews();
@@ -24,14 +28,11 @@ function submitReview() {
 
 function removeReview() {
   localStorage.removeItem("reviews");
-  localStorage.removeItem("review-password");
-
   displayReviews();
 }
 
 function displayReviews() {
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-  let reviewList = document.querySelector(".review-list");
 
   reviewList.innerHTML = "";
 

@@ -16,10 +16,10 @@
       </a>
     </nav>
     <main class="main-detail">
-      <section class="movie-image-wrap">
-        <img class="backdrop-image" src="" alt="" />
-      </section>
       <section class="movie-content-wrap">
+        <div class="movie-image-wrap">
+          <img class="backdrop-image" src="" alt="" />
+        </div>
         <div class="movie-info-wrap">
           <div class="movie-title-wrap">
             <h1 class="movie-title"></h1>
@@ -42,14 +42,14 @@
         <label for="revivewtext">작성:</label>
         <textarea id="reviewText" class="review-text" name="review-Text"></textarea>
 
-        <button onclick="submitReview()">영화 리뷰 작성</button>
-        <button onclick="removeReview()">전부 삭제</button>
         <label for="reviewPassword">비밀번호:</label>
         <input id="reviewPassword" class="review-password" name="reviewPassword" />
 
+        <button onclick="submitReview()">영화 리뷰 작성</button>
+        <button onclick="removeReview()">전부 삭제</button>
+
         <div class="review-list"></div>
-      </body>
-      <script src="src/review.js"></script>
+        <script src="src/review.js"></script>
       </section>
     </main>
     <script type="module" src="./src/detail.js"></script>
