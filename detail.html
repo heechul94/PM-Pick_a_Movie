@@ -12,7 +12,7 @@
     <nav class="navigation">
       <a class="logo" href="index.html">
         <img class="logo-image" src="./assets/PM_LOGO.png" alt="logo image" />
-        <span class="logo-title">Pick a Movie</span>
+        <span class="logo-title">PICK A MOVIE</span>
       </a>
     </nav>
     <main class="main-detail">
@@ -36,18 +36,18 @@
       </section>
       <section class="review-wrap">
         <h2>Reviews</h2>
-        <label for="reviewerInput">작성자:</label>
-        <input type="text" id="reviewerInput" class="reviewer-input" name="reviewerInput" />
-
-        <label for="revivewtext">작성:</label>
-        <textarea id="reviewText" class="review-text" name="review-Text"></textarea>
-
-        <label for="reviewPassword">비밀번호:</label>
-        <input id="reviewPassword" class="review-password" name="reviewPassword" />
-
-        <button onclick="submitReview()">영화 리뷰 작성</button>
-        <button onclick="removeReview()">전부 삭제</button>
-
+        <div class="review-input-wrap">
+          <label for="reviewerInput">작성자:</label>
+          <input type="text" id="reviewerInput" class="reviewer-input" name="reviewerInput" />
+          <label for="reviewPassword">비밀번호:</label>
+          <input id="reviewPassword" class="review-password" name="reviewPassword" />
+          <label for="revivewtext">작성:</label>
+          <textarea id="reviewText" class="review-text" name="review-Text"></textarea>
+        </div>
+        <div class="review-button-wrap">
+          <button onclick="submitReview()">영화 리뷰 작성</button>
+          <button onclick="removeReview()">전부 삭제</button>
+        </div>
         <div class="review-list"></div>
         <script src="src/review.js"></script>
       </section>
