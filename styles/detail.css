@@ -2,7 +2,7 @@ body {
   background-color: #640ff310;
 }
 /* ------- 네비게이션
-              영역 ------- */
+                영역 ------- */
 .navigation {
   display: flex;
   position: sticky;
@@ -24,7 +24,7 @@ body {
 }
 
 /* ------- 메인 세부내용
-              영역 ------- */
+                영역 ------- */
 
 .main-detail {
   display: grid;

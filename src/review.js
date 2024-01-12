@@ -1,25 +1,30 @@
 function submitReview() {
   let reviewer = document.querySelector(".reviewer").value;
   let reviewText = document.querySelector(".reviewText").value;
-
+  let revivewPassword = document.querySelector(".revivewPassword").value;
   let newReview = { reviewer: reviewer, text: reviewText };
 
   let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
 
-  if (reviewer.length <= 0 || reviewText.length <= 0) {
+  if (!reviewer.trim() || !reviewText.trim()) {
     alert("작성자와 리뷰를 모두 입력하세요!");
     return;
+  } else {
+    reviews.push(newReview);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+    localStorage.setItem("revivewPassword", JSON.stringify(revivewPassword));
+
+    document.querySelector(".reviewer").value = "";
+    document.querySelector(".reviewText").value = "";
+    document.querySelector(".revivewPassword").value = "";
   }
-
-  reviews.push(newReview);
-
-  localStorage.setItem("reviews", JSON.stringify(reviews));
 
   displayReviews();
 }
 
 function removeReview() {
   localStorage.removeItem("reviews");
+  localStorage.removeItem("revivewPassword");
 
   displayReviews();
 }
@@ -29,9 +34,13 @@ function displayReviews() {
   let reviewList = document.querySelector(".reviewList");
 
   reviewList.innerHTML = "";
+
   if (reviews.length > 0) {
     reviews.forEach(function (review) {
-      reviewList.innerHTML += "작성자: &ensp;" + review.reviewer + "<p>" + "리뷰:   &ensp;" + review.text + "<br><br>";
+      let reviewWriter = review.reviewer + "<p>";
+      let reviewContent = review.text + "</p>";
+      let reviewFull = reviewWriter + reviewContent;
+      reviewList.innerHTML += reviewFull;
     });
   }
 }
