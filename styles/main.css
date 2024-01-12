@@ -41,7 +41,7 @@ main {
   margin-right: 1rem;
 }
 .searchInput {
-  width: 20rem;
+  width: 12rem;
   height: 4rem;
   padding: 1rem;
   margin-right: 1rem;
@@ -55,9 +55,9 @@ main {
   outline: none;
 }
 .searchButton {
-  width: 10rem;
+  width: 7rem;
   height: 4rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   border-radius: 0.5rem;
   box-shadow: 0rem 0rem 0.2rem #640ff380;
   background-color: #640ff320;
