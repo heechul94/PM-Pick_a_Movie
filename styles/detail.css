@@ -92,7 +92,7 @@ body {
 .review-wrap > h2 {
   margin-bottom: 12px;
 }
-.reviewList {
+.review-list {
   width: 100%;
   height: 80%;
   overflow: scroll;
