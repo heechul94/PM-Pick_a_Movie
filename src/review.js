@@ -3,17 +3,19 @@ const reviewText = document.querySelector(".review-text");
 const reviewPassword = document.querySelector(".review-password");
 const reviewList = document.querySelector(".review-list");
 
+const reviewId = location.href.split("?")[1];
+
 function submitReview() {
   let newReview = { reviewer: reviewer.value, text: reviewText.value, password: reviewPassword.value };
 
-  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
 
   if (!reviewer.value.trim() || !reviewText.value.trim()) {
     alert("작성자와 리뷰를 모두 입력하세요!");
     return;
   } else {
     reviews.push(newReview);
-    localStorage.setItem("reviews", JSON.stringify(reviews));
+    localStorage.setItem(`${reviewId}`, JSON.stringify(reviews));
     reviewer.value = null;
     reviewText.value = null;
     reviewPassword.value = null;
@@ -27,12 +29,12 @@ function submitReview() {
 }
 
 function removeReview() {
-  localStorage.removeItem("reviews");
+  localStorage.removeItem(`${reviewId}`);
   displayReviews();
 }
 
 function displayReviews() {
-  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
 
   reviewList.innerHTML = "";
 
