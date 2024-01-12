@@ -5,52 +5,44 @@ body {
 main {
   padding: 5rem;
 }
-.headerLayout {
+.navigation {
   display: flex;
   justify-content: space-between;
   position: sticky;
-  top: 0rem;
+  top: 0;
   width: 100vw;
-  padding: 1rem 3rem;
+  height: 9rem;
   background-color: white;
   box-shadow: 0rem 0.1rem 1rem #00000050;
 }
-.homeTitle {
-  width: 50%;
-  text-decoration: none;
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 11rem;
+  padding: 1rem;
 }
-.homeTitle:hover {
-  text-decoration: none;
+.logo-image {
+  width: 5rem;
 }
-.pageTitle {
-  width: 100%;
-  align-self: center;
-  font-size: 2rem;
+.logo-title {
   color: #640ff380;
   font-family: "Courier New", Courier, monospace;
 }
-.pageTitle:hover {
+.logo-title:hover {
   color: #644ff390;
 }
-.logoBox {
-  width: 6rem;
-  margin-right: 1rem;
-  /* background-color: blueviolet; */
-  /* border: 1px solid red; */
-}
-.logoBox > img {
-  width: 100%;
-}
+
 .searchBar {
   display: flex;
   justify-content: flex-end;
-  align-content: center;
-  width: 100%;
+  align-items: center;
   padding: 1rem;
-  /* border: 1px solid blueviolet; */
+  margin-right: 1rem;
 }
 .searchInput {
   width: 20rem;
+  height: 4rem;
   padding: 1rem;
   margin-right: 1rem;
   font-size: 1.5rem;
@@ -64,6 +56,7 @@ main {
 }
 .searchButton {
   width: 10rem;
+  height: 4rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0rem 0rem 0.2rem #640ff380;
@@ -142,4 +135,24 @@ main {
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+@media screen and (max-width: 1400px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 8px;
+  }
 }
