@@ -2,10 +2,12 @@ const reviewer = document.querySelector(".reviewer-input");
 const reviewText = document.querySelector(".review-text");
 const reviewPassword = document.querySelector(".review-password");
 const reviewList = document.querySelector(".review-list");
+const submitBtn = document.querySelector(".review-submit-btn");
 
 const reviewId = location.href.split("?")[1];
 
 function submitReview() {
+  submitBtn.addEventListener("submit", (event) => event.preventDefault());
   let newReview = { reviewer: reviewer.value, text: reviewText.value, password: reviewPassword.value };
 
   let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
