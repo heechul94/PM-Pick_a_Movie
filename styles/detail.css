@@ -160,11 +160,21 @@ body {
   border-radius: 10px;
   background-color: white;
 }
-.review-button-wrap > button {
-  margin: 1rem;
+.review-header {
+  display: flex;
+  justify-content: space-between;
+}
+.review-delete-btn {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.1rem;
   padding: 1rem;
-  border: 1px solid black;
   border-radius: 10px;
+  cursor: pointer;
+}
+.review-delete-btn > img {
+  width: 100%;
+  object-fit: contain;
 }
 .review-list {
   display: flex;
