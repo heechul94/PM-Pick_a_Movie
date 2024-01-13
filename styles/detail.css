@@ -108,18 +108,46 @@ body {
 .review-wrap > h2 {
   margin-bottom: 12px;
 }
+.review-info-input-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.inputs-wrap {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+}
 .review-input-wrap {
   display: flex;
   flex-direction: column;
 }
-.review-text {
-  border: 1px solid blueviolet;
-  resize: none;
+.review-input-wrap > input {
+  width: 80%;
 }
-.review-button-wrap {
+.review-text-wrap {
   display: flex;
   justify-content: space-between;
-  margin: 1rem;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  background-color: #00000020;
+}
+.review-text {
+  font-size: 1.2rem;
+  resize: none;
+}
+.review-text:focus {
+  outline: none;
+}
+.review-submit-btn {
+  width: 5rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: white;
 }
 .review-button-wrap > button {
   margin: 1rem;
@@ -144,14 +172,14 @@ body {
   width: 100%;
   padding: 1rem;
   margin-bottom: 1rem;
-  /* border: 1px solid black; */
   border-radius: 5px;
   background-color: #00000020;
+  /* border: 1px solid black; */
 }
 .review-user {
   display: inline-block;
   font-size: 1.4rem;
-  padding: 0.2rem;
+  padding: 0.5rem;
   margin-bottom: 1rem;
   /* border: 1px solid black; */
   border-radius: 5px;
