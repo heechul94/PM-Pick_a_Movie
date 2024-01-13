@@ -12,8 +12,8 @@ function submitReview() {
 
   let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
 
-  if (!reviewer.value.trim() || !reviewText.value.trim()) {
-    alert("작성자와 리뷰를 모두 입력하세요!");
+  if (!reviewer.value.trim() || !reviewText.value.trim()||!reviewPassword.value.trim()) {
+    alert("작성자와 리뷰, 비밀번호를 모두 입력하세요!");
     return;
   } else {
     reviews.push(newReview);
@@ -30,10 +30,22 @@ function submitReview() {
   displayReviews();
 }
 
-function removeReview() {
-  localStorage.removeItem(`${reviewId}`);
-  displayReviews();
+
+function removeReviewOnly(index) {
+  let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
+  let review = reviews[index];
+  let passwordEntered = prompt("리뷰삭제를 원한다면 비밀번호를 입력하세요!");
+  if (passwordEntered == review.password) {
+      reviews.splice(index, 1);
+      localStorage.setItem(`${reviewId}`, JSON.stringify(reviews));
+      displayReviews();
+  } else {
+      alert("비밀번호가 맞지 않습니다!");
+      return;
+  }
 }
+
+
 
 function displayReviews() {
   let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
@@ -41,10 +53,11 @@ function displayReviews() {
   reviewList.innerHTML = "";
 
   if (reviews.length > 0) {
-    reviews.forEach(function (review) {
+    reviews.forEach(function (review, index) {
       let reviewWriter = `<span class ="review-user">${review.reviewer}</span>`;
       let reviewContent = `<div class ="review-content">${review.text}</div>`;
-      let reviewCard = `<div class="review-card">${reviewWriter + reviewContent}</div>`;
+      let deleteButton = `<button onclick="removeReviewOnly(${index})">리뷰 삭제</button>`;
+      let reviewCard = `<div class="review-card">${reviewWriter + reviewContent+deleteButton}</div>`;
       reviewList.innerHTML += reviewCard;
     });
   }
