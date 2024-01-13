@@ -169,7 +169,7 @@ body {
   height: 1rem;
   margin: 0.1rem;
   cursor: pointer;
-  background-image: url(/assets/trash.png);
+  background-image: url(../assets/trash.png);
   background-size: cover;
 }
 /* .review-delete-btn > img {
