@@ -133,6 +133,9 @@ body {
 .review-input-wrap > input {
   width: 80%;
 }
+.review-input-wrap > input:focus {
+  outline: none;
+}
 .review-text-wrap {
   display: flex;
   justify-content: space-between;
