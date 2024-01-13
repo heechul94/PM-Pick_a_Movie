@@ -78,10 +78,11 @@ body {
 }
 .movie-title {
   font-size: 2rem;
-  margin-right: 12px;
+  margin: 5px 12px 1px 0;
 }
 .movie-original-title {
   font-weight: 500;
+  margin: 5px 12px 1px 0;
 }
 .sub-info-wrap {
   display: flex;
@@ -89,6 +90,9 @@ body {
   justify-content: space-between;
   font-weight: 400;
   margin-bottom: 25px;
+}
+.sub-info-wrap > span {
+  margin: 5px 12px 1px 0;
 }
 .overview {
   line-height: 2rem;
