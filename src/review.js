@@ -59,7 +59,7 @@ function displayReviews() {
       let reviewCard = `<div class="review-card">
                           <div class="review-header">
                             <span class ="review-user">${review.reviewer}</span>
-                            <button class ="review-delete-btn" onclick="removeReviewOnly(${index})"></button>
+                            <button class ="review-delete-btn" onclick="removeReviewOnly(${index})">삭제</button>
                           </div>
                           <div class ="review-content">${review.text}</div>
                         </div>`;
