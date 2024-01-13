@@ -36,18 +36,23 @@
       </section>
       <section class="review-wrap">
         <h2>Reviews</h2>
-        <div class="review-input-wrap">
-          <label for="reviewerInput">작성자:</label>
-          <input type="text" id="reviewerInput" class="reviewer-input" name="reviewerInput" />
-          <label for="reviewPassword">비밀번호:</label>
-          <input id="reviewPassword" class="review-password" name="reviewPassword" />
-          <label for="revivewtext">작성:</label>
-          <textarea id="reviewText" class="review-text" name="review-Text"></textarea>
-        </div>
-        <div class="review-button-wrap">
-          <button onclick="submitReview()">영화 리뷰 작성</button>
-          <button onclick="removeReview()">전부 삭제</button>
-        </div>
+        <form class="review-info-input-wrap">
+          <div class="inputs-wrap">
+            <div class="review-input-wrap">
+              <label for="reviewerInput">작성자</label>
+              <input type="text" id="reviewerInput" class="reviewer-input" name="reviewerInput" />
+            </div>
+            <div class="review-input-wrap">
+              <label for="reviewPassword">비밀번호</label>
+              <input type="password" id="reviewPassword" class="review-password" name="reviewPassword" />
+            </div>
+          </div>
+          <div class="review-text-wrap">
+            <textarea id="reviewText" class="review-text" name="reviewText"></textarea>
+            <button type="button" class="review-submit-btn" onclick="submitReview()">작성</button>
+          </div>
+        </form>
+        <!-- <button onclick="removeReview()">전부 삭제</button> -->
         <div class="review-list"></div>
         <script src="src/review.js"></script>
       </section>
