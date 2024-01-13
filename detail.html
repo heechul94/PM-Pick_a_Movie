@@ -12,14 +12,14 @@
     <nav class="navigation">
       <a class="logo" href="index.html">
         <img class="logo-image" src="./assets/PM_LOGO.png" alt="logo image" />
-        <span class="logo-title">Pick a Movie</span>
+        <span class="logo-title">PICK A MOVIE</span>
       </a>
     </nav>
     <main class="main-detail">
-      <section class="movie-image-wrap">
-        <img class="backdrop-image" src="" alt="" />
-      </section>
       <section class="movie-content-wrap">
+        <div class="movie-image-wrap">
+          <img class="backdrop-image" src="" alt="" />
+        </div>
         <div class="movie-info-wrap">
           <div class="movie-title-wrap">
             <h1 class="movie-title"></h1>
@@ -31,22 +31,30 @@
             <span class="countries"></span>
             <span class="runtime"></span>
           </div>
+          <p class="overview"></p>
         </div>
-        <p class="overview"></p>
       </section>
       <section class="review-wrap">
         <h2>Reviews</h2>
-        <label for="reviewer">작성자:</label>
-        <input type="text" id="reviewer" class="reviewer" name="reviewer" />
-        <label for="revivewText">작성:</label>
-        <textarea id="reviewText" class="reviewText" name="reviewText"></textarea>
-        <button onclick="submitReview()">영화 리뷰 작성</button>
-        <button onclick="removeReview()">전부 삭제</button>
-        <label for="revivewPassword">비밀번호:</label>
-        <input id="revivewPassword" class="revivewPassword" name="revivewPassword" />
-        <div class="reviewList"></div>
-      </body>
-      <script src="src/review.js"></script>
+        <form class="review-info-input-wrap">
+          <div class="inputs-wrap">
+            <div class="review-input-wrap">
+              <label for="reviewerInput">작성자</label>
+              <input type="text" id="reviewerInput" class="reviewer-input" name="reviewerInput" />
+            </div>
+            <div class="review-input-wrap">
+              <label for="reviewPassword">비밀번호</label>
+              <input type="password" id="reviewPassword" class="review-password" name="reviewPassword" />
+            </div>
+          </div>
+          <div class="review-text-wrap">
+            <textarea id="reviewText" class="review-text" name="reviewText"></textarea>
+            <button type="button" class="review-submit-btn" onclick="submitReview()">작성</button>
+          </div>
+        </form>
+        <!-- <button onclick="removeReview()">전부 삭제</button> -->
+        <div class="review-list"></div>
+        <script src="src/review.js"></script>
       </section>
     </main>
     <script type="module" src="./src/detail.js"></script>

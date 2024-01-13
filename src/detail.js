@@ -17,4 +17,3 @@ document.querySelector(".release").innerText = data.release_date;
 document.querySelector(".genres").innerText = genre;
 document.querySelector(".countries").innerText = countries;
 document.querySelector(".runtime").innerText = `${data.runtime} minute`;
-document.querySelector(".companies").innerText = companies;

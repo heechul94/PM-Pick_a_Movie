@@ -1,54 +1,64 @@
+const reviewer = document.querySelector(".reviewer-input");
+const reviewText = document.querySelector(".review-text");
+const reviewPassword = document.querySelector(".review-password");
+const reviewList = document.querySelector(".review-list");
+const submitBtn = document.querySelector(".review-submit-btn");
+
+const reviewId = location.href.split("?")[1];
+
 function submitReview() {
-  let reviewer = document.querySelector(".reviewer").value;
-  let reviewText = document.querySelector(".review-Text").value;
-  let revivewPassword = document.querySelector(".revivew-Password").value;
-  let newReview = { reviewer: reviewer, text: reviewText };
+  submitBtn.addEventListener("submit", (event) => event.preventDefault());
+  let newReview = { reviewer: reviewer.value, text: reviewText.value, password: reviewPassword.value };
 
-  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
 
-  if (!reviewer.trim() || !reviewText.trim()||!revivewPassword.trim()) {
+  if (!reviewer.value.trim() || !reviewText.value.trim()||!reviewPassword.value.trim()) {
     alert("작성자와 리뷰, 비밀번호를 모두 입력하세요!");
     return;
   } else {
     reviews.push(newReview);
-    localStorage.setItem("reviews", JSON.stringify(reviews));
-    localStorage.setItem("revivew-Password", JSON.stringify(revivewPassword));
+    localStorage.setItem(`${reviewId}`, JSON.stringify(reviews));
+    reviewer.value = null;
+    reviewText.value = null;
+    reviewPassword.value = null;
 
-    document.querySelector(".reviewer").value = "";
-    document.querySelector(".review-Text").value = "";
-    document.querySelector(".revivew-Password").value = "";
+    // document.querySelector(".reviewer-input").value = "";
+    // document.querySelector(".review-text").value = "";
+    // document.querySelector(".review-password").value = "";
   }
 
   displayReviews();
 }
 
+
 function removeReviewOnly(index) {
   let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
   let review = reviews[index];
-  let passwordEntered = prompt("리뷰 삭제를위한 비밀번호가 필요합니다!");
+  let passwordEntered = prompt("리뷰삭제를 원한다면 비밀번호를 입력하세요!");
   if (passwordEntered == review.password) {
       reviews.splice(index, 1);
       localStorage.setItem(`${reviewId}`, JSON.stringify(reviews));
       displayReviews();
   } else {
       alert("비밀번호가 맞지 않습니다!");
+      return;
   }
 }
 
 
+
 function displayReviews() {
-  let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
-  let reviewList = document.querySelector(".review-List");
+  let reviews = JSON.parse(localStorage.getItem(`${reviewId}`)) || [];
 
   reviewList.innerHTML = "";
 
   if (reviews.length > 0) {
-    reviews.forEach(function (review) {
-      let reviewWriter = `<div class ="review-Writer">${review.reviewer}</div>`;
-      let reviewContent = `<div class ="review-Content">${review.text}</div>`;
+    reviews.forEach(function (review, index) {
+      let reviewWriter = `<span class ="review-user">${review.reviewer}</span>`;
+      let reviewContent = `<div class ="review-content">${review.text}</div>`;
       let deleteButton = `<button onclick="removeReviewOnly(${index})">리뷰 삭제</button>`;
-      let reviewFull = `<div class="review-Full">${reviewWriter + reviewContent+deleteButton}</div>`;
-      reviewList.innerHTML += reviewFull;
+      let reviewCard = `<div class="review-card">${reviewWriter + reviewContent+deleteButton}</div>`;
+      reviewList.innerHTML += reviewCard;
     });
   }
 }
