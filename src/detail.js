@@ -1,10 +1,9 @@
 import { getMovieDetail } from "./api/get.js";
 
 let data = await getMovieDetail();
-const { genres, production_countries, production_companies } = data;
+const { genres, production_countries } = data;
 const genre = genres.map((e) => e.name);
 const countries = production_countries.map((e) => e.name);
-const companies = production_companies.map((e) => e.name);
 
 document.querySelector(".backdrop-image").src = `https://image.tmdb.org/t/p/original/${data.backdrop_path}`;
 document.querySelector(".movie-title").innerText = data.title;
