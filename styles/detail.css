@@ -20,16 +20,18 @@ body {
   align-items: center;
   width: 11rem;
   padding: 1rem;
+  color: #640ff380;
+}
+.logo:hover {
+  text-decoration: none;
+  color: #644ff350;
 }
 .logo-image {
   width: 5rem;
 }
 .logo-title {
-  color: #640ff380;
+  font-weight: 700;
   font-family: "Courier New", Courier, monospace;
-}
-.logo-title:hover {
-  color: #644ff390;
 }
 
 /* ------- 메인 세부내용

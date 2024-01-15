@@ -22,16 +22,18 @@ main {
   align-items: center;
   width: 11rem;
   padding: 1rem;
+  color: #640ff380;
+}
+.logo:hover {
+  text-decoration: none;
+  color: #644ff350;
 }
 .logo-image {
   width: 5rem;
 }
 .logo-title {
-  color: #640ff380;
+  font-weight: 700;
   font-family: "Courier New", Courier, monospace;
-}
-.logo-title:hover {
-  color: #644ff390;
 }
 
 .searchBar {
@@ -109,6 +111,7 @@ main {
 }
 .cardAnchor:hover {
   box-shadow: 0rem 1rem 2rem #640ff380;
+  text-decoration: none;
 }
 .cardAnchor > img {
   align-self: center;
