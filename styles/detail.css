@@ -211,7 +211,7 @@ body {
   word-break: break-all;
   white-space: pre-line;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1440px) {
   html {
     font-size: 10px;
   }
