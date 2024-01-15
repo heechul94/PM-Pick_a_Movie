@@ -30,3 +30,14 @@ export async function getMovieDetail() {
     alert(error);
   }
 }
+
+export async function getCountries() {
+  const NATIVE_COUNTRY_URL = "https://api.themoviedb.org/3/configuration/countries?language=ko";
+  try {
+    const result = await fetch(NATIVE_COUNTRY_URL, options);
+    const data = await result.json();
+    return data;
+  } catch {
+    alert(error);
+  }
+}
