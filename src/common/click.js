@@ -7,7 +7,7 @@ export async function clickSubmitButton(target, data) {
     const list = document.querySelector(".movieList");
     let searchWord = $searchInput.value.trim();
     const searchData = await data.filter((e) => e.title.toLowerCase().includes(searchWord.toLowerCase()));
-    console.log("인풋 : " + searchWord);
+
     if (!searchWord) {
       return alert("검색어를 입력해주세요");
     } else if (!searchData.length) {
