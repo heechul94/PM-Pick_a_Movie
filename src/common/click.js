@@ -6,7 +6,13 @@ export async function clickSubmitButton(target, data) {
     const $searchInput = document.querySelector(".searchInput");
     const list = document.querySelector(".movieList");
     let searchWord = $searchInput.value.trim();
-    const searchData = await data.filter((e) => e.title.toLowerCase().includes(searchWord.toLowerCase()));
+    const searchData = await data.filter((e) => {
+      if (searchWord.charCodeAt() >= 12593) {
+        return e.title.includes(searchWord);
+      } else {
+        return e.original_title.toLowerCase().includes(searchWord.toLowerCase());
+      }
+    });
 
     if (!searchWord) {
       return alert("검색어를 입력해주세요");
