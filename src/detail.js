@@ -16,4 +16,4 @@ document.querySelector(".overview").innerText = data.overview;
 document.querySelector(".release").innerText = data.release_date;
 document.querySelector(".genres").innerText = genre;
 document.querySelector(".countries").innerText = countries;
-document.querySelector(".runtime").innerText = `${data.runtime} minute`;
+document.querySelector(".runtime").innerText = `${parseInt(data.runtime / 60)}시간 ${data.runtime % 60}분`;
