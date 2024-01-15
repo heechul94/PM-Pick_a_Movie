@@ -8,7 +8,7 @@ const options = {
 };
 
 export async function getMovieList() {
-  const BASE_URL = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+  const BASE_URL = "https://api.themoviedb.org/3/movie/top_rated?language=ko&page=1";
   try {
     const result = await fetch(BASE_URL, options);
     const data = await result.json();
