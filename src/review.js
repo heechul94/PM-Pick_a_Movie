@@ -27,7 +27,6 @@ function submitReview() {
 function removeReviewOnly(index) {
   let review = reviews[index];
   let passwordEntered = prompt("리뷰삭제를 원한다면 비밀번호를 입력하세요!");
-  console.log(passwordEntered.length);
   if (passwordEntered === null) {
     return;
   } else if (passwordEntered.length === 0) {
