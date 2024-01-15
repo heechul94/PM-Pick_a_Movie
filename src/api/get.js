@@ -19,7 +19,6 @@ export async function getMovieList() {
 }
 
 const receivedData = location.href.split("?")[1];
-console.log(receivedData);
 
 export async function getMovieDetail() {
   const detailUrl = `https://api.themoviedb.org/3/movie/${receivedData}?language=ko`;
@@ -31,8 +30,3 @@ export async function getMovieDetail() {
     alert(error);
   }
 }
-
-// fetch(`https://api.themoviedb.org/3/movie/${receivedData}?language=en-US`, options)
-// .then(response => response.json())
-// .then(response => console.log(response))
-// .catch(err => console.error(err));
