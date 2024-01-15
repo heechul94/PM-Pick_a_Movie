@@ -10,7 +10,6 @@ const nativeName = countries.map((item) => {
     return e.english_name === item;
   }).native_name;
 });
-console.log(nativeName);
 
 document.querySelector(".backdrop-image").src = `https://image.tmdb.org/t/p/original/${data.backdrop_path}`;
 document.querySelector(".movie-title").innerText = data.title;
