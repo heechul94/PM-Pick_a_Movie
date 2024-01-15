@@ -159,6 +159,7 @@ body {
   font-size: 1.2rem;
   border-radius: 10px;
   background-color: white;
+  cursor: pointer;
 }
 .review-header {
   display: flex;
