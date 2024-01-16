@@ -85,7 +85,8 @@ body {
 }
 .movie-original-title {
   font-weight: 500;
-  margin: 5px 12px 1px 0;
+  opacity: 0.6;
+  margin: 10px 12px 1px 0;
 }
 .sub-info-wrap {
   display: flex;
@@ -201,7 +202,7 @@ body {
 .review-user {
   display: inline-block;
   font-size: 1.2rem;
-  padding: 0.5rem;
+  padding: 0.1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #8a2be2;
   border-radius: 5px;
