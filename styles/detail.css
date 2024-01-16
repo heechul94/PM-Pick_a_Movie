@@ -253,9 +253,10 @@ body {
   .review-wrap {
     width: 80%;
   }
-  /* .review-list {
+  .review-list {
+    height: auto;
     overflow: visible;
-  } */
+  }
 }
 @media screen and (max-width: 768px) {
   html {
@@ -290,7 +291,8 @@ body {
   .sub-info-wrap > span {
     margin-bottom: 1rem;
   }
-  /* .review-list {
+  .review-list {
+    height: auto;
     overflow: visible;
-  } */
+  }
 }
